@@ -11,14 +11,18 @@ import Header from "./components/Header/Header.jsx"
 function App() {
 
   return (
-    <Router>
-      <Header/>
+    <div>
+  
       <Routes>
+
         <Route path="/" element={<Home />} />
         <Route path="/boards" element={<Boards />} />
+
       </Routes>
+
       <Footer/>
-    </Router>
+      {/* Footer can go outside of Router Because all pages use it*/}
+    </div>
   );
 }
 
