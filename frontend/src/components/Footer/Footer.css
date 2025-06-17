@@ -1,0 +1,13 @@
+.footer-box{
+    background-color:  rgb(107, 141, 253);
+    text-align: end;
+    height: 10vh;
+}
+
+.footer-text{
+    font-family: 'Courier New', Courier, monospace;
+    color: gold;
+    font-weight: bold;
+    margin-right: 2%;
+    font-size: 5em;
+}
