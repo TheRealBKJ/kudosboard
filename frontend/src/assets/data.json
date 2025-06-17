@@ -1,0 +1,96 @@
+[
+    {
+        "id": 1,
+        "title": "Team Appreciation",
+        "category": "Work",
+        "author": "Alex",
+        "image": "https://example.com/images/team.jpg",
+        "description": "A board to appreciate teammates!",
+        "cards": [
+            {
+                "id": 101,
+                "boardId": 1,
+                "message": "Shoutout to Sarah for crushing the Q2 goals!",
+                "gif": "https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif",
+                "upvotes": 5,
+                "owner": "Braden"
+            },
+            {
+                "id": 102,
+                "boardId": 1,
+                "message": "Thanks Mike for always being helpful.",
+                "gif": "https://media.giphy.com/media/3ohs4BSacFKI7A717y/giphy.gif",
+                "upvotes": 3,
+                "owner": null
+            },
+            {
+                "id": 103,
+                "boardId": 1,
+                "message": "Great job by the design team on the new feature!",
+                "gif": "https://media.giphy.com/media/xUPGcl3ijl0yV6S1Vu/giphy.gif",
+                "upvotes": 7,
+                "owner": "Jess"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Birthday Wishes",
+        "category": "Social",
+        "author": null,
+        "image": "https://example.com/images/birthday.jpg",
+        "description": "Celebrate birthdays with warm messages and fun gifs!",
+        "cards": [
+            {
+                "id": 201,
+                "boardId": 2,
+                "message": "Happy Birthday Jess! 🎉",
+                "gif": "https://media.giphy.com/media/3orieRzA1K3HBQNzHy/giphy.gif",
+                "upvotes": 10,
+                "owner": "Sam"
+            },
+            {
+                "id": 202,
+                "boardId": 2,
+                "message": "Wishing you all the cake and joy 🧁",
+                "gif": "https://media.giphy.com/media/fxsqOYnIMEefC/giphy.gif",
+                "upvotes": 6,
+                "owner": "Alex"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Project Launch",
+        "category": "Milestone",
+        "author": "Morgan",
+        "image": "https://example.com/images/launch.jpg",
+        "description": "Messages and kudos for the big product launch!",
+        "cards": [
+            {
+                "id": 301,
+                "boardId": 3,
+                "message": "Huge congrats on the launch team!",
+                "gif": "https://media.giphy.com/media/xT0xeJpnrWC4XWblEk/giphy.gif",
+                "upvotes": 9,
+                "owner": "Jordan"
+            },
+            {
+                "id": 302,
+                "boardId": 3,
+                "message": "That was a ton of work — proud of everyone 💪",
+                "gif": "https://media.giphy.com/media/l0MYDGA6kP2aPFZ2w/giphy.gif",
+                "upvotes": 12,
+                "owner": null
+            },
+            {
+                "id": 303,
+                "boardId": 3,
+                "message": "Let’s celebrate this huge win!",
+                "gif": "https://media.giphy.com/media/l0HlymK5okNnJvZfK/giphy.gif",
+                "upvotes": 4,
+                "owner": "Casey"
+            }
+        ]
+    }
+]
