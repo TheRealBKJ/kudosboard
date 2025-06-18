@@ -14,16 +14,16 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Board {
+model board {
   id       Int     @id @default(autoincrement())
   title    String
   category String
   author   String?
 
-  cards    Card[]
+  cards    card[]
 }
 
-model Card {
+model card {
   id Int @id @default(autoincrement())
   board_id Int
   message  String
@@ -31,5 +31,5 @@ model Card {
   upvotes  Int @default(0)
   owner    String?
 
-  board    Board  @relation(fields: [board_id], references: [id])
+  board    board  @relation(fields: [board_id], references: [id])
 }
