@@ -6,7 +6,7 @@
 const express = require('express')
 const router = express.Router()
 
-const { PrismaClient } = require('@prisma/client')
+const { PrismaClient } = require('../generated/prisma')
 const prisma = new PrismaClient()
 
 //get all cards 
@@ -77,3 +77,6 @@ router.delete('/board/:boardId/:cardId', async (req, res) => {
     }
 
 })
+
+
+module.exports = router;  

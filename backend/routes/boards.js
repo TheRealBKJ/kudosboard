@@ -1,14 +1,14 @@
 const express = require('express')
 const router = express.Router()
 
-const { PrismaClient } = require('@prisma/client')
+const { PrismaClient } = require('../generated/prisma')//prisma was generated in wrong folder
 const prisma = new PrismaClient()
 
 // using /, get functions one for all of them and one to get a specific ones cards
 
 //get function for rendering page
 router.get('/', async (req, res) => {
-    
+
     try {
         const boards = await prisma.board.findMany();
         res.json(boards)
