@@ -6,6 +6,15 @@ import Boards from './pages/Boards';
 import Footer from "./components/Footer/Footer.jsx";
 import Header from "./components/Header/Header.jsx"
 
+//going to be home page now 
+// boardslist
+//boards
+//add newBoard
+// filter
+//search bar
+//link to boards view through clikcing on boards
+// main page
+
 // fetching data in list components  to let app handle routing and layout
 //have to wrap app in routs to allow routing, header and footer can go outside bc on every page
 function App() {
