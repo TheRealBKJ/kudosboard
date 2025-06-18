@@ -10,7 +10,8 @@ const { PrismaClient } = require('../generated/prisma')
 const prisma = new PrismaClient()
 
 //get all cards 
-router.get('/board/:boardId', async (req, res) => {
+// WORKS
+router.get('/:boardId', async (req, res) => {
     const { boardId } = req.params
 
     try {
@@ -25,7 +26,8 @@ router.get('/board/:boardId', async (req, res) => {
 
 
 //create new card
-router.post('/board/:boardId', async (req, res) => {
+//WORKS
+router.post('/:boardId', async (req, res) => {
     const { boardId } = req.params
     const { message, gif, owner } = req.body;
 
@@ -47,7 +49,8 @@ router.post('/board/:boardId', async (req, res) => {
 
 
 //update upvotes
-router.put('/board/:boardId/:cardId', async (req, res) => {
+//WORKS
+router.put('/:boardId/:cardId', async (req, res) => {
     const { cardId } = req.params
     try {
         const upvoteCard = await prisma.card.update({
@@ -64,7 +67,8 @@ router.put('/board/:boardId/:cardId', async (req, res) => {
 
 
 //delete card
-router.delete('/board/:boardId/:cardId', async (req, res) => {
+//WORKS
+router.delete('/:boardId/:cardId', async (req, res) => {
     const {cardId} = req.params
     try {
         await prisma.card.delete({
