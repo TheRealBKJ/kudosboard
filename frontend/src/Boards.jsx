@@ -5,6 +5,7 @@
 
 // import all the links, useparams to get the boardid its on and fetch
 import{Link,useParams} from "react-router"
+import axios from "axios";
 
 export default function Boards (){
     const boardid = useParams() // how to fetch id for board
