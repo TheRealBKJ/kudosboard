@@ -10,16 +10,18 @@ export default function BoardList (){
 
     const [boards,setBoards] = useState([])
 
-    // useEffect to fetch and update boards
+    // useEffect to fetch and update boards when prompted
 
-    // has to do a delete request to get rid of it and then update it using react and then will also show in next render
+
+    //pushes delete requeest up from BoardCard
     const handleDeleteBoard = (id) =>{
 
     }
-    //propogates and switches views to /boards page
-    const handleViewBoard = (id) => {
-        //switch to a diff link and a get request??
+     // pushes up data reuqeust from addNewBoard
+    const handleAddNewBoard= (data) => {
+
     }
+
 
     return (
         <div className ="board-list">

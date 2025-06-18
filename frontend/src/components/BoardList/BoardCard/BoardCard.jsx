@@ -1,9 +1,5 @@
-// take in data to add atrributues, prepare to add comments inf tuure
+import{Link} from "react-router" // link to cards asosciated 
 
-// each board has an id, image, category, author, title, description, and 
-// has a link to a card 
-// in DB need a foregin key that links to cardlist
-// just shows data and passed props to BoardCardList
 
 
 export default function BoardCard ({data , onDeleteBoard, onViewBoard}){
