@@ -6,7 +6,12 @@ const prisma = new PrismaClient()
 
 // using /, get functions one for all of them and one to get a specific ones cards
 
-//get function for rendering page
+// fetch localhost:3000/boards + id for delete request
+
+
+
+//get function for rendering page - works
+//WORKS
 router.get('/', async (req, res) => {
 
     try {
@@ -21,6 +26,7 @@ router.get('/', async (req, res) => {
 
 
 //post function for add board
+//WORKS
 router.post('/', async (req, res) => {
     const { title, category, author } = req.body
 
@@ -40,7 +46,8 @@ router.post('/', async (req, res) => {
 
 
 
-// delete function for boards delete board button
+// delete function for boards delete board button - works
+//WORKS
 router.delete('/:id', async (req, res) => {
     const { id } = req.params
 

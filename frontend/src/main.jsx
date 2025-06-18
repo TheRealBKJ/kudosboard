@@ -4,7 +4,21 @@ import './index.css'
 import App from './App.jsx'
 import React from 'react'
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, createBrowserRouter } from 'react-router-dom';
+import Home from './pages/Home.jsx'
+import Boards from './pages/Boards.jsx';
+
+const routes = createBrowserRouter([
+  {
+    path: '/',
+    element: <Home/>
+  },
+
+  {
+    path: '/board-detials',
+    elemnt: <Boards/>
+  }
+])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>

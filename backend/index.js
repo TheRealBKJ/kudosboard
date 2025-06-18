@@ -11,8 +11,8 @@ app.use(express.json()); //to parse everything into json
 const boardRoutes = require('./routes/boards'); // board routing
 const cardRoutes = require('./routes/cards'); //imports cards routing
 
-app.use(boardRoutes);
-app.use(cardRoutes);
+app.use('/boards', boardRoutes);
+app.use( '/cards', cardRoutes);
 
 
 app.use((err, req, res, next) => {

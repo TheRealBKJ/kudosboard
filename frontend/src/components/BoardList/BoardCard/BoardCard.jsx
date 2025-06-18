@@ -5,6 +5,9 @@
 // in DB need a foregin key that links to cardlist
 // just shows data and passed props to BoardCardList
 
+import { Link } from "react-router-dom"; // how to add link to viewboards page
+//use params to get the id of board for fetch!
+
 
 export default function BoardCard ({data , onDeleteBoard, onViewBoard}){
 
