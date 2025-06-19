@@ -9,15 +9,16 @@ export default function FilterBar({ boards, changedData }) {
         setFilterByValue(selected);
 
         if (selected === "All") {
+            // Show all boards
             changedData(boards);
         } else if (selected === "Recent") {
-            // Sort by creation date and take latest 6, i have to run the schema again to build createdAt
+            // Sort by createdAt descending and show latest 6
             const sorted = [...boards].sort(
                 (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
             );
             changedData(sorted.slice(0, 6));
         } else {
-            // Filter by category
+            // Filter by category case-insensitive
             const filtered = boards.filter(
                 (board) => board.category.toLowerCase() === selected.toLowerCase()
             );
@@ -28,7 +29,11 @@ export default function FilterBar({ boards, changedData }) {
     return (
         <div className="filter-bar">
             <label htmlFor="filter-select">Filter:</label>
-            <select id="filter-select" value={filterByValue} onChange={handleFilterChange}>
+            <select
+                id="filter-select"
+                value={filterByValue}
+                onChange={handleFilterChange}
+            >
                 <option value="All">All / Home</option>
                 <option value="Recent">Recent</option>
                 <option value="Celebration">Celebration</option>
