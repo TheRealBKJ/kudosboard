@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./CreateCard.css"; // Optional styling
+import "./CreateACard.css"; // Optional styling
 
 export default function CreateCard({ onSubmit, onExit }) {
     const [message, setMessage] = useState("");

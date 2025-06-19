@@ -16,7 +16,7 @@ export default function Header ({boards,changedData}) {
     return (
         <header className= "header-bar">
             <div className = "elements container">
-                <h1 className= "banner" Kudos Board />
+                <h1 className= "banner">Kudos Board</h1>
                 {/*Return the data we get from SearchBar and FilterBar being clicked, just pass up data */}
                 {/* send boards to search and filter to let them process */}
                 <SearchBar boards={boards} changedData={handleSearchData}/>

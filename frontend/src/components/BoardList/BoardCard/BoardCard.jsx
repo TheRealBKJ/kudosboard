@@ -1,7 +1,5 @@
-import { Link } from "react-router" // link to cards asosciated 
 import "./BoardCard.css";
-
-import { Link } from "react-router-dom"; // how to add link to viewboards page
+import { Link } from "react-router"; // how to add link to viewboards page
 //use params to get the id of board for fetch!
 
 

@@ -1,11 +1,6 @@
 import AddNewBoard from "./AddNewBoard/AddNewBoard.jsx";
 import BoardCard from "./BoardCard/BoardCard.jsx";
-import {useEffect,useState} from React;
-import data from "../../assets/data.json";
-
-// fetch data from DB , be able to manipulate it from other compoenents like filter or searchbar
-
-
+import {useEffect,useState} from 'react';
 export default function BoardList({ boards, addABoard, deleteBoard }) {
 
 
@@ -23,7 +18,7 @@ export default function BoardList({ boards, addABoard, deleteBoard }) {
 
     return (
         <div className ="board-list">
-
+            <AddNewBoard handleAddBoard ={addABoard}/>
             {/*maps the boards out*/}
             {boards.map((board) =>(
                 <BoardCard
@@ -32,8 +27,6 @@ export default function BoardList({ boards, addABoard, deleteBoard }) {
                     onDeleteBoard ={deleteBoard}
                 />
             ))}
-
-
         </div>
     );
 }

@@ -9,7 +9,7 @@ const API_BASE = 'http://localhost:3000/board';
 export default function Boards() {
     const { boardId } = useParams() // gets the ID for fetching
     const boardTitle = useLocation(); // gets the state passed over from boardcard for title
-    const { title } = location.state
+    const { title } = location.state || {}
     const [cards, setCards] = useState([])
     const [showModal, setShowModal] = useState(false); // for creating cards
 
@@ -86,10 +86,10 @@ export default function Boards() {
             </header>
 
             <button onClick={() => setShowModal(true)}>Create Card</button>
-            
+
             {/* Modal to create a card */}
             {showModal && (
-                <CreateCard
+                <CreateACard
                     onSubmit={async (cardData) => {
                         await addCard(cardData);
                         setShowModal(false);

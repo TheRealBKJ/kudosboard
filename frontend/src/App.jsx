@@ -1,11 +1,9 @@
-
 import './App.css'
 import Header from "./components/Header/Header"; //header with search and filter
 import BoardList from "./components/BoardList/BoardList" // boardlist with add new card, board card
 import Footer from './components/Footer/Footer';
-import { useState } from 'react';
-const API_BASE = 'https://localhost:3000/boards'
-
+import { useState, useEffect } from 'react';
+const API_BASE = 'http://localhost:3000/boards'
 //link to boards view through clikcing on boards
 //pass down items to boardlist
 // let header return an array
@@ -79,7 +77,6 @@ export default function App() {
         addABoard={addABoard} // adds boards ad props up the data
         deleteBoard={deleteBoard} // props up the id to delete a board
       />
-      <Footer /> {/* no fetching*/}
     </div>
   )
 
