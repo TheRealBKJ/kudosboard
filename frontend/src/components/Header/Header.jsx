@@ -3,7 +3,7 @@ import SearchBar from "./SearchBar/SearchBar.jsx";
 import FilterBar from "./FilterBar/FilterBar.jsx";
 import "./Header.css"; // styling
 
-export default function Header ({changedData}) {
+export default function Header ({boards,changedData}) {
 
     const handleSearchData = (data) =>{
         changedData(data)// sends search data to parent componeent to update boards lisr
@@ -18,8 +18,9 @@ export default function Header ({changedData}) {
             <div className = "elements container">
                 <h1 className= "banner" Kudos Board />
                 {/*Return the data we get from SearchBar and FilterBar being clicked, just pass up data */}
-                <SearchBar changedData={handleSearchData}/>
-                <FilterBar changedData = {handleFilterData}/> 
+                {/* send boards to search and filter to let them process */}
+                <SearchBar boards={boards} changedData={handleSearchData}/>
+                <FilterBar boards={boards}  changedData = {handleFilterData}/> 
             </div>
 
         </header>

@@ -1,78 +1,40 @@
 import AddNewBoard from "./AddNewBoard/AddNewBoard.jsx";
 import BoardCard from "./BoardCard/BoardCard.jsx";
-import { useEffect, useState } from React;
+import {useEffect,useState} from React;
 import data from "../../assets/data.json";
 
 // fetch data from DB , be able to manipulate it from other compoenents like filter or searchbar
 
 
-export default function BoardList() {
+export default function BoardList({ boards, addABoard, deleteBoard }) {
 
-    const [boards, setBoards] = useState([])
-    const [addModal, setAddModal] = useState(false)
 
-    // useEffect to fetch and update boards
+    const [isModalOpen, setIsModalOpen] = useState(false); //open and close modal
 
-    // has to do a delete request to get rid of it and then update it using react and then will also show in next render
-    const handleDeleteBoard = (id) => {
-        //do state after fetch request
-        //update UseState
+    const openModal = () => setIsModalOpen(true);// open modal
+    const closeModal = () => setIsModalOpen(false);//close modal
 
-        //delete Request
-
-    }
-    //propogates and switches views to /boards page
-    const handleViewBoard = (id) => {
-
-        // get request??
-
-        //switch to a diff link 
-    }
-
-    const handleAddBoard = async (newBoard) =>{
-
-        //post request
-        setBoards((prev) => [...prev,newBoard])
-    }
-
-    const openModal = () => {
-        setAddModal(true);
-    };
-
-    const closeModal = () => {
-        setAddModal(false);
+    // close modal when data is propped up and submitted 
+    const handleAddBoard = (boardData) => {
+        addABoard(boardData); //pass up board data
+        closeModal();
+        // passes up new board, app posts new board and then boardlist reloads
     };
 
     return (
-        <div className="board-list">
-
-            {/*Button to toggle on the add list*/}
-            <button className="addNewBoard-button"
-                onClick={() => setAddModal(true)}>
-                Add New Board
-            </button>
-
-            {/*/Displays Modal depending on if it is clicked*/}
-            {showModal && (
-                <AddNewBoardModal
-                    onClose={() => setShowModal(false)}
-                    onAddBoard={handleAddBoard}
-                />
-            )}
+        <div className ="board-list">
 
             {/*maps the boards out*/}
-            {boards.map((board) => {
+            {boards.map((board) =>{
                 <BoardCard
-                    key={board.id}
-                    data={board}
+                    key = {board.id}
+                    data = {board}
                     onDeleteBoard={handleDeleteBoard}
                     onViewBoard={handleViewBoard}
                 />
             })}
 
 
-
         </div>
-    )
-
+    );
 }
