@@ -1,24 +1,82 @@
-//create card
-//card list
-//card
-//back button link to home
+import { Link, useLocation, useParams } from "react-router"
+import { useEffect, useState } from "react";
+import BoardCard from "./components/BoardList/BoardCard/BoardCard.jsx";
+const API_BASE = 'http://localhost:3000/board';
 
-// import all the links, useparams to get the boardid its on and fetch
-import{Link,useParams} from "react-router"
-import axios from "axios";
+export default function Boards() {
+    const { boardId } = useParams() // gets the ID for fetching
+    const boardTitle = useLocation(); // gets the state passed over from boardcard for title
+    const { title } = location.state
+    const [cards, setCards] = useState([])
 
-export default function Boards (){
-    const boardid = useParams() // how to fetch id for board
-    // have all the functions for doing stuff to cards here
-    // bubble up from components\
 
-    //handle fetch all cards
+    // when id changes so does the page
+    useEffect(() => {
+        // fetch cards
+    }, [boardId])
 
-    //handle creating new card
+    async function fetchCards() {
+        try {
+            const res = await fetch(`${API_BASE}/${boardId}`);
+            const data = await res.json();
+            setCards(data);
+        } catch (error) {
+            console.error(error);
+        }
+    }
 
-    // handle upvoting a card
+    // Load cards when boardId changes
+    useEffect(() => {
+        if (boardId) fetchCards();
+    }, [boardId]);
 
-    // handle deleting a card
+    // add new card
+    async function addCard({ message, gif, owner }) {
+        try {
+            const res = await fetch(`${API_BASE}/${boardId}`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ 
+                    message, 
+                    gif, 
+                    owner 
+                }),
+            });
+            await fetchCards(); // refresh after adding
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    // upvote a card
+    async function upvoteCard(cardId) {
+        try {
+            const res = await fetch(`${API_BASE}/${boardId}/${cardId}`, {
+                method: 'PUT',
+            });
+            if (!res.ok) throw new Error('Failed to upvote card');
+            await fetchCards(); // refresh after upvote
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    // delete a card
+    async function deleteCard(cardId) {
+        try {
+            const res = await fetch(`${API_BASE}/${boardId}/${cardId}`, {
+                method: 'DELETE',
+            });
+            if (res.status !== 204) throw new Error('Failed to delete card');
+            await fetchCards(); // refresh after delete
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+
+    
+
 
 
 }
