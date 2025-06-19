@@ -18,7 +18,7 @@ export default function App() {
   // call when its loaded
   useEffect(() => {
     fetchBoards();
-  }, []);
+  }, [boards]);
 
   // fetch all boards using useEffect and passes down to BoardList
   const fetchBoards = async () => {
@@ -26,19 +26,19 @@ export default function App() {
       const boards = await fetch('https://localhost:3000/boards', { // fetch all the boards
         method: 'GET',
       })
-      setBoards(boards)
+
+      const data = await boards.json() // wait to be turend into json data
+      setBoards(data)
     } catch (error) {
       console.error(error)
     }
   }
 
 
-
-
   //delete a board
   const deleteBoard = async (id) => {
     try {
-      fetch(`https://localhost:3000/boards/${id}`, {
+      await fetch(`https://localhost:3000/boards/${id}`, {
         method: 'DELETE', //delete
       })
       setBoards(prev => prev.filter((board) => board.id !== id)) //sets boards to each one that doesnt call ID
@@ -48,9 +48,7 @@ export default function App() {
   }
 
   // add a board
-
   const addABoard = async (data) => {
-
     try {
       const res = await fetch('http://localhost:3000/boards', {
         method: 'POST',
@@ -63,6 +61,9 @@ export default function App() {
           author,
         }),
       })
+      const newBoard = await res.json() 
+      setBoards((prev) => [...prev,newBoard]) // adds data to boards
+
     } catch (error) {
       console.error(error)
     }
@@ -70,9 +71,15 @@ export default function App() {
 
   return (
     <div className='all-container'>
-      <Header />
-      <BoardList />
-      <Footer />
+      <Header boards={boards} // passes down current boards
+          setBoards = {setBoards}  // setsBoards based on what is propped up back from search or filter
+      />
+      <BoardList
+        boards={boards} //  pass down current boards
+        addABoard={addABoard} // adds boards ad props up the data
+        deleteBoard={deleteBoard} // props up the id to delete a board
+      />
+      <Footer /> {/* no fetching*/}
     </div>
   )
 

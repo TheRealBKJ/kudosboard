@@ -6,7 +6,7 @@ export default function BoardCard({ data, onDeleteBoard}){
 
     return (
         <div className="movie-card">
-            <img className="movie-card-img" />
+            <img className="movie-card-img" src="https://picsum.photos/200/300?random=197" alt = {data.title} />
 
             <div className="movie-card-contents">
                 <h2 className="movie-card-title">{data.title}</h2>
@@ -22,7 +22,7 @@ export default function BoardCard({ data, onDeleteBoard}){
                     </Link>
                     <button
                         className="delete-button">
-                        OnClick = {() => onDeleteBoard(data.id)}
+                        onClick = {() => onDeleteBoard(data.id)}
                         Delete Board
                     </button>
                 </div>
