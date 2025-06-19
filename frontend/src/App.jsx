@@ -72,7 +72,7 @@ export default function App() {
   return (
     <div className='all-container'>
       <Header boards={boards} // passes down current boards
-          setBoards = {setBoards}  // setsBoards based on what is propped up back from search or filter
+          changedData = {setBoards}  // setsBoards based on what is propped up back from search or filter
       />
       <BoardList
         boards={boards} //  pass down current boards

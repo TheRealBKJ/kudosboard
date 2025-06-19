@@ -1,6 +1,9 @@
 import { Link, useLocation, useParams } from "react-router"
 import { useEffect, useState } from "react";
 import BoardCard from "./components/BoardList/BoardCard/BoardCard.jsx";
+import CardList from "./components/CardList/CardList.jsx"
+import CreateACard from "./components/CardList/CreateACard/CreateACard.jsx";
+import "./Boards.css"
 const API_BASE = 'http://localhost:3000/board';
 
 export default function Boards() {
@@ -36,10 +39,10 @@ export default function Boards() {
             const res = await fetch(`${API_BASE}/${boardId}`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ 
-                    message, 
-                    gif, 
-                    owner 
+                body: JSON.stringify({
+                    message,
+                    gif,
+                    owner
                 }),
             });
             await fetchCards(); // refresh after adding
@@ -75,8 +78,22 @@ export default function Boards() {
     }
 
 
-    
+    return (
+        <div>
+            <header className ="boards-header">
+                <h1>{title}</h1>
+                <Link to="/">← Back to Home</Link>
+            </header>
 
+            {/* Modal to create a card */}
+            <CreateACard onCreate={addCard} />
 
-
+            {/* List of all cards */}
+            <CardList
+                cards={cards}
+                onDelete={deleteCard}
+                onUpvote={upvoteCard}
+            />
+        </div>
+    );
 }
