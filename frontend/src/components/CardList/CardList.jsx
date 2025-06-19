@@ -1,5 +1,16 @@
 import Card from "./Card/Card.jsx";
-import CreateACard from "./CreateACard/CreateACard.jsx";
 
-// get request all cards for a defined board here, pass it down to card
-// have to figure out how to load dynamically when createaCard does a post request
+export default function CardList({ cards, onDelete, onUpvote }) {
+    return (
+        <div className="card-list">
+            {cards.map((card) => (
+                <Card
+                    key={card.id}
+                    card={card}
+                    onDelete={onDelete}
+                    onUpvote={onUpvote}
+                />
+            ))}
+        </div>
+    );
+}

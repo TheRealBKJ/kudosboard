@@ -11,7 +11,7 @@ export default function Boards() {
     const boardTitle = useLocation(); // gets the state passed over from boardcard for title
     const { title } = location.state
     const [cards, setCards] = useState([])
-
+    const [showModal, setShowModal] = useState(false); // for creating cards
 
     // when id changes so does the page
     useEffect(() => {
@@ -80,13 +80,23 @@ export default function Boards() {
 
     return (
         <div>
-            <header className ="boards-header">
+            <header className="boards-header">
                 <h1>{title}</h1>
                 <Link to="/">← Back to Home</Link>
             </header>
 
+            <button onClick={() => setShowModal(true)}>Create Card</button>
+            
             {/* Modal to create a card */}
-            <CreateACard onCreate={addCard} />
+            {showModal && (
+                <CreateCard
+                    onSubmit={async (cardData) => {
+                        await addCard(cardData);
+                        setShowModal(false);
+                    }}
+                    onExit={() => setShowModal(false)}
+                />
+            )}
 
             {/* List of all cards */}
             <CardList

@@ -1,5 +1,17 @@
-// just logic to make a card, should be passed down
-// card should have message, gif, number of upvotes, a foregin key relating back to the board its a part of
-// optional author in DB 
-// delete request 
-// put request for upvotes
+import "./Card.css"; 
+
+export default function Card({ card, onDelete, onUpvote }) {
+    const { id, message, gif, upvotes } = card;
+
+    return (
+        <div className="card">
+            <p className="card-message">{message}</p>
+            <img src={gif} alt="GIF" className="card-gif" />
+
+            <div className="card-actions">
+                <button onClick={() => onUpvote(id)}>Upvotes: {upvotes}</button>
+                <button onClick={() => onDelete(id)}>Delete</button>
+            </div>
+        </div>
+    );
+}

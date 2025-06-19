@@ -29,8 +29,7 @@ export default function BoardList({ boards, addABoard, deleteBoard }) {
                 <BoardCard
                     key = {board.id}
                     data = {board}
-                    onDeleteBoard={handleDeleteBoard}
-                    onViewBoard={handleViewBoard}
+                    onDeleteBoard ={deleteBoard}
                 />
             })}
 
