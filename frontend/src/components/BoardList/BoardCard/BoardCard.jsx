@@ -1,5 +1,5 @@
 import { Link } from "react-router" // link to cards asosciated 
-
+import "./BoardCard.css";
 
 
 export default function BoardCard({ data, onDeleteBoard}){
