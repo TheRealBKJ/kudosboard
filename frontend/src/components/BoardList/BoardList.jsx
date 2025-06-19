@@ -25,13 +25,13 @@ export default function BoardList({ boards, addABoard, deleteBoard }) {
         <div className ="board-list">
 
             {/*maps the boards out*/}
-            {boards.map((board) =>{
+            {boards.map((board) =>(
                 <BoardCard
                     key = {board.id}
                     data = {board}
                     onDeleteBoard ={deleteBoard}
                 />
-            })}
+            ))}
 
 
         </div>
