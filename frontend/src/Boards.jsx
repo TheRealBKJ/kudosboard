@@ -80,7 +80,9 @@ export default function Boards() {
         <div>
             <header className="boards-header">
                 <h1>{title}</h1>
-                <Link to="/">← Back to Home</Link>
+                <button>
+                    <Link to="/">← Back to Home</Link>
+                </button>
             </header>
 
             <button onClick={() => setShowModal(true)}>Create Card</button>
