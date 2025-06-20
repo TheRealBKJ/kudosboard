@@ -1,0 +1,57 @@
+.card {
+    position: relative;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.card-message {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: blue;
+}
+
+.card-gif {
+    max-width: 100%;
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+}
+
+.card-actions button {
+    margin-right: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    border: none;
+    background-color: #1976d2;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.card-actions button:hover {
+    background-color: #1565c0;
+}
+
+/* Pin button style */
+.card>button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: transparent;
+    border: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.card>button:hover {
+    transform: scale(1.3);
+}
+
+.card>button.pinned {
+    background-color: yellow;
+    transform: scale(1.3);
+}

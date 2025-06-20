@@ -75,6 +75,20 @@ export default function Boards() {
         }
     }
 
+    async function pinCard(cardId) {
+        try{
+            const res = await fetch(`${API_BASE}/${id}/${cardId}/pin`,{
+                method: 'PUT',
+            });
+            if (!res.ok) throw new Error('Failed to pin card');
+            await fetchCards();
+        }catch(error){
+            console.error(error)
+        }
+    }
+        
+
+
 
     return (
         <div>
@@ -103,6 +117,7 @@ export default function Boards() {
                 cards={cards}
                 onDelete={deleteCard}
                 onUpvote={upvoteCard}
+                onPin ={pinCard}
             />
         </div>
     );
