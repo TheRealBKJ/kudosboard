@@ -19,6 +19,8 @@ export default function Card({ card, onDelete, onUpvote, onPin }) {
                     cardId={id} //pass down id for fetching
                     boardId={board_id} // pass down boardid for fetching
                     onExit={() => changeShowComments(false)} // close out when clicked
+                    card_gif = {gif}
+                    card_text = {message}
                 />}
 
             <p className="card-message">{message}</p>

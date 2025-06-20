@@ -3,7 +3,7 @@ import { useState, useEffect, useSyncExternalStore } from "react"; // load comme
 const API_URL = import.meta.env.VITE_API_CARD_URL; // holds base url to fetch from
 // fetch from here because it should only be called when someone wants to add a comment
 
-export default function CreateComment({ cardId, boardId, onExit }) {
+export default function CreateComment({ cardId, boardId, onExit, card_gif, card_text }) {
     const [comments, setComments] = useState([]) //hold current comments
     const [newComment, makeNewComment] = useState("")//hold message
     const [author, setAuthor] = useState("") //keep author , optional value
@@ -60,9 +60,10 @@ export default function CreateComment({ cardId, boardId, onExit }) {
                 <h2>Comments</h2>
 
                 {/* comments Display */}
+                <img src={card_gif} alt="GIF" className="card-gif" />
+                <h2>{card_text}</h2>
 
                 <div className="comments-box">
-
                     {comments.map((comment) => (
                         //map out a comment in rows
                         <div className="comment-row" key={comment.id}>
