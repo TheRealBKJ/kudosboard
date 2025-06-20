@@ -94,12 +94,12 @@ export default function Boards() {
         <div>
             <header className="boards-header">
                 <h1>{title}</h1>
-                <button>
+                <button className="back-home-card" >
                     <Link to="/">← Back to Home</Link>
                 </button>
             </header>
 
-            <button onClick={() => setShowModal(true)}>Create Card</button>
+            <button className="create-card"  onClick={() => setShowModal(true)}>Create Card</button>
 
             {/* Modal to create a card */}
             {showModal && (

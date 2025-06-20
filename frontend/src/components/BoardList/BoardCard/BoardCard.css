@@ -1,7 +1,13 @@
-.board-card-buttons{
+.board-card-buttons {
     gap: 20px;
 }
 
-.board-card{
+.board-card {
     border: 4px solid green;
+}
+
+.view-board-link {
+    background-color: white;
+    padding: 0.6em 1em;
+    border-radius: 5px;
 }

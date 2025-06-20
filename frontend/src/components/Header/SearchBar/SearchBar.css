@@ -1,0 +1,19 @@
+.search-bar {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    max-width: 300px;
+    margin: 0 auto;
+    /* center horizontally */
+}
+
+.search-bar input {
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+.search-bar button {
+    padding: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
