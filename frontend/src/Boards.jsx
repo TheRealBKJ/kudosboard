@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import CardList from "./components/CardList/CardList.jsx"
 import CreateACard from "./components/CardList/CreateACard/CreateACard.jsx";
 import "./Boards.css"
-const API_BASE = 'http://localhost:3000/board';
+const API_BASE = 'http://localhost:3000/board'
 
 export default function Boards() {
     const { id } = useParams() // gets the ID for fetching

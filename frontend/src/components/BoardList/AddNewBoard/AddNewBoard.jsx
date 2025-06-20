@@ -27,7 +27,7 @@ export default function AddNewBoard({ addABoard, onClose }) {
             alert("Please fill in the required fields.");
         }
         //error handling for input in future 
-        addABoard({ title, category, author }); // bubble up data for new board
+         // bubble up data for new board
         setTitle(""); // sets the fields back to nothing for next fetch
         setCategory("");
         setAuthor("");

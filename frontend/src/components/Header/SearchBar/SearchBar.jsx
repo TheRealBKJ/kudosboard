@@ -3,7 +3,7 @@ import "./SearchBar.css";
 import { useState, useEffect } from "react";
 // should use a fetch request to filter out by name
 
-export default function SearchBar({ boards, changedData }) {
+export default function SearchBar({ boards, changedData, originalBoards }) {
 
     const [userInput, setUserInput] = useState(""); //take input from user
     const [searchData, setSearchData] = useState([]); // what use to send up data to header, going to use one main fetch function from header
@@ -33,7 +33,7 @@ export default function SearchBar({ boards, changedData }) {
     // need to add parent function that fetches the regular boards
     const clearSearch = () => {
         setUserInput("");
-        changedData(boards); // restore original data
+        changedData(originalBoards); // restore original data
     };
 
     //listen for enter key, used old code

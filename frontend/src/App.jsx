@@ -1,7 +1,6 @@
 import './App.css'
 import Header from "./components/Header/Header"; //header with search and filter
 import BoardList from "./components/BoardList/BoardList" // boardlist with add new card, board card
-import Footer from './components/Footer/Footer';
 import { useState, useEffect } from 'react';
 const API_BASE = 'http://localhost:3000/boards'
 //link to boards view through clikcing on boards
@@ -11,12 +10,12 @@ const API_BASE = 'http://localhost:3000/boards'
 export default function App() {
 
   const [boards, setBoards] = useState([]) //hold card of boards to pass down to BoardsList
-
+  const [originalBoards, setOriginalBoards] = useState([]) // holds original boards for clear search feature
 
   // call when its loaded
   useEffect(() => {
     fetchBoards();
-  }, [boards]);
+  }, []);
 
   // fetch all boards using useEffect and passes down to BoardList
   const fetchBoards = async () => {
@@ -26,6 +25,7 @@ export default function App() {
       })
 
       const data = await boards.json() // wait to be turend into json data
+      setOriginalBoards(data)// set originalboards 
       setBoards(data)
     } catch (error) {
       console.error(error)
@@ -71,7 +71,8 @@ export default function App() {
   return (
     <div className='all-container'>
       <Header boards={boards} // passes down current boards
-          changedData = {setBoards}  // setsBoards based on what is propped up back from search or filter
+          changedData = {setBoards}
+          originalBoards = {originalBoards}  // setsBoards based on what is propped up back from search or filter
       />
       <BoardList
         boards={boards} //  pass down current boards

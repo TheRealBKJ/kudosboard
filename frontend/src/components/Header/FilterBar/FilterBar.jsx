@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./FilterBar.css";
 
-export default function FilterBar({ boards, changedData }) {
+export default function FilterBar({ boards, changedData, originalBoards }) {
     const [filterByValue, setFilterByValue] = useState("All");
 
     const handleFilterChange = (event) => {
@@ -10,7 +10,7 @@ export default function FilterBar({ boards, changedData }) {
 
         if (selected === "All") {
             // Show all boards
-            changedData(boards);
+            changedData(originalBoards);
         } else if (selected === "Recent") {
             // Sort by createdAt descending and show latest 6
             const sorted = [...boards].sort(

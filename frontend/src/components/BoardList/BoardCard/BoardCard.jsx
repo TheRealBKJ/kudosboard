@@ -1,32 +1,30 @@
+import { Link } from "react-router-dom";
 import "./BoardCard.css";
-import { Link } from "react-router"; // how to add link to viewboards page
-//use params to get the id of board for fetch!
-
 
 export default function BoardCard({ data, onDeleteBoard }) {
-
     return (
-        <div className="movie-card">
+        <div className="board-card">
             <img
-                className="movie-card-img"
+                className="board-card-img"
                 src={`https://picsum.photos/seed/${data.id}/300/200`}
                 alt={data.title}
             />
 
-            <div className="movie-card-contents">
-                <h2 className="movie-card-title">{data.title}</h2>
-                <h3 className="movie-card-genre"> {data.category}</h3>
-                <div className="movie-card-buttons">
+            <div className="board-card-contents">
+                <h2 className="board-card-title">{data.title}</h2>
+                <h3 className="board-card-category">{data.category}</h3>
 
+                <div className="board-card-buttons">
                     <Link
-                        className="cards-link"
+                        className="view-board-link"
                         to={`/boards/${data.id}`}
-                        state={{ title: data.title, category: data.category }} // use useLocation for cardLocation
+                        state={{ title: data.title, category: data.category }}
                     >
                         View Board
                     </Link>
+
                     <button
-                        className="delete-button"
+                        className="delete-board-button"
                         onClick={() => onDeleteBoard(data.id)}
                     >
                         Delete Board

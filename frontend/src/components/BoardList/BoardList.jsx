@@ -13,6 +13,7 @@ export default function BoardList({ boards, addABoard, deleteBoard }) {
     // close modal when data is propped up and submitted 
     const handleAddBoard = (boardData) => {
         addABoard(boardData); //pass up board data
+
         closeModal();
         // passes up new board, app posts new board and then boardlist reloads
     };
