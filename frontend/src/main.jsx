@@ -19,7 +19,7 @@ const router = createBrowserRouter([
     element: <Boards />
   }
 ])
-
+// my shine for the week, dark mode only changing the same thing
 function ColorWrap() {
   const [darkMode, setDarkMode] = useState(false);
 

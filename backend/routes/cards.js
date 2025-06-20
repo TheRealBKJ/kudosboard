@@ -24,8 +24,24 @@ router.get('/:boardId', async (req, res) => {
     }
 });
 
+//gets all the comments
+router.get('/:boardId/:cardId/comments', async (req, res) => {
+    const { cardId } = req.params;
+
+    try {
+        const comments = await prisma.comment.findMany({
+            where: { cardId: parseInt(cardId) },
+            orderBy: { createdAt: 'asc' } // oldest going to be displayed first
+        });
+
+        res.json(comments);
+    } catch (error) {
+        res.status(500).json({ error: "Failed to get comments" });
+    }
+});
 
 //create new card
+
 //WORKS
 router.post('/:boardId', async (req, res) => {
     const { boardId } = req.params
@@ -47,6 +63,28 @@ router.post('/:boardId', async (req, res) => {
     }
 });
 
+//post a comment
+router.post('/:boardId/:cardId/comment', async (req, res) => {
+    const { cardId } = req.params;
+    const { message, author } = req.body;
+
+    try {
+        const newComment = await prisma.comment.create({
+            data: {
+                message,
+                author,
+                card: {
+                    connect: { id: parseInt(cardId) }
+                }
+            }
+        });
+
+        res.status(201).json(newComment);
+    } catch (error) {
+        console.error("Error creating comment:", error);
+        res.status(500).json({ error: "Failed to create comment" });
+    }
+});
 
 //update upvotes
 //WORKS

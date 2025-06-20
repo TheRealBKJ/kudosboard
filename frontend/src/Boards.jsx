@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import CardList from "./components/CardList/CardList.jsx"
 import CreateACard from "./components/CardList/CreateACard/CreateACard.jsx";
 import "./Boards.css"
-const API_BASE = 'http://localhost:3000/board'
+const API_BASE = import.meta.env.VITE_API_CARD_URL //import card url
 
 export default function Boards() {
     const { id } = useParams() // gets the ID for fetching
@@ -12,9 +12,6 @@ export default function Boards() {
     const [cards, setCards] = useState([])
     const [showModal, setShowModal] = useState(false); // for creating cards
     // when id changes so does the page
-    useEffect(() => {
-        // fetch cards
-    }, [id])
 
     async function fetchCards() {
         try {

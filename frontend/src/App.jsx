@@ -2,7 +2,7 @@ import './App.css'
 import Header from "./components/Header/Header"; //header with search and filter
 import BoardList from "./components/BoardList/BoardList" // boardlist with add new card, board card
 import { useState, useEffect } from 'react';
-const API_BASE = 'http://localhost:3000/boards'
+const API_BASE = import.meta.env.VITE_API_BASE_URL;
 //link to boards view through clikcing on boards
 //pass down items to boardlist
 // let header return an array
