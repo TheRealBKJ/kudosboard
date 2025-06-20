@@ -1,0 +1,7 @@
+.board-card-buttons{
+    gap: 20px;
+}
+
+.board-card{
+    border: 4px solid green;
+}

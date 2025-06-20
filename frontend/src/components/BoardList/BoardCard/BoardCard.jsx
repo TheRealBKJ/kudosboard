@@ -15,13 +15,15 @@ export default function BoardCard({ data, onDeleteBoard }) {
                 <h3 className="board-card-category">{data.category}</h3>
 
                 <div className="board-card-buttons">
-                    <Link
-                        className="view-board-link"
-                        to={`/boards/${data.id}`}
-                        state={{ title: data.title, category: data.category }}
-                    >
-                        View Board
-                    </Link>
+                    <button>
+                        <Link
+                            className="view-board-link"
+                            to={`/boards/${data.id}`}
+                            state={{ title: data.title, category: data.category }}
+                        >
+                            View Board
+                        </Link>
+                    </button>
 
                     <button
                         className="delete-board-button"
@@ -31,6 +33,6 @@ export default function BoardCard({ data, onDeleteBoard }) {
                     </button>
                 </div>
             </div>
-        </div>
+        </div >
     );
 }
