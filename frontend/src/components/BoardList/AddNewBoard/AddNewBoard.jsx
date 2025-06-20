@@ -27,7 +27,7 @@ export default function AddNewBoard({ addABoard, onClose }) {
             alert("Please fill in the required fields.");
         }
         //error handling for input in future 
-         // bubble up data for new board
+        // bubble up data for new board
         setTitle(""); // sets the fields back to nothing for next fetch
         setCategory("");
         setAuthor("");
@@ -47,12 +47,15 @@ export default function AddNewBoard({ addABoard, onClose }) {
                         value={title}
                         onChange={(e) => setTitle(e.target.value)}
                     />
-                    <input
-                        type="text"
-                        placeholder="Category"
+                    <select
                         value={category}
                         onChange={(e) => setCategory(e.target.value)}
-                    />
+                    >
+                        <option value="">Select a category</option>
+                        <option value="Thank you">Thank you</option>
+                        <option value="Celebration">Celebration</option>
+                        <option value="Inspiration">Inspiration</option>
+                    </select>
                     <input
                         type="text"
                         placeholder="Author (optional)"
