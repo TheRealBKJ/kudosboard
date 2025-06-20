@@ -135,8 +135,6 @@ Deployed Application https://kudosboard-271n.onrender.com/
 
 ### Walkthrough Video
 
-`TODO://` Add the embedded URL code to your animated app walkthrough below, `ADD_EMBEDDED_CODE_HERE`. Make sure the video or gif actually renders and animates when viewing this README. Ensure your walkthrough showcases the presence and/or functionality of all features you implemented above (check them off as you film!). Pay attention to any **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS** checkboxes listed above to ensure graders see the full functionality of your website! (🚫 Remove this paragraph after adding walkthrough video)
-
 `<div>
     <a href="https://www.loom.com/share/fba211505cf04eae8257d9887e1f219a">
       <p>Videos | Library | Loom - 20 June 2025 - Watch Video</p>
