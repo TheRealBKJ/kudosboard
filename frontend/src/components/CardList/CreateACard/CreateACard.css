@@ -1,0 +1,93 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    max-width: 400px;
+    width: 90%;
+    position: relative;
+}
+
+.exit-button {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 1.8rem;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.2s ease;
+}
+
+.exit-button:hover {
+    color: #e74c3c;
+}
+
+.create-card-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.create-card-form input[type="text"] {
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    border: 1.5px solid #ccc;
+    border-radius: 6px;
+    outline-offset: 2px;
+    outline-color: #0077ff;
+    transition: border-color 0.2s ease;
+}
+
+.create-card-form input[type="text"]:focus {
+    border-color: #0077ff;
+}
+
+.create-card-form button[type="submit"] {
+    padding: 0.75rem;
+    background-color: #0077ff;
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.create-card-form button[type="submit"]:hover {
+    background-color: #005bb5;
+}
+
+.gif-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+    margin-top: 1rem;
+}
+
+.gif-options img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gif-options img.selected {
+    border: 3px solid yellow;
+}

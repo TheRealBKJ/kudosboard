@@ -1,5 +1,5 @@
 import Card from "./Card/Card.jsx";
-
+import "./CardList.css";
 export default function CardList({ cards, onDelete, onUpvote }) {
     return (
         <div className="card-list">

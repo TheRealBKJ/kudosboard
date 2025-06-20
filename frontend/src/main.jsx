@@ -1,4 +1,4 @@
-import { StrictMode } from 'react'
+import { StrictMode, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx' // shows homepage
@@ -19,6 +19,11 @@ const router = createBrowserRouter([
     element: <Boards />
   }
 ])
+
+// for dark mode
+function Root() {
+  const [darkMode,setDarkMode] = useState(false)
+}
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

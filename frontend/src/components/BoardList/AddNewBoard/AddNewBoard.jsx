@@ -35,10 +35,10 @@ export default function AddNewBoard({ addABoard, onClose }) {
 
 
     return (
-        <div className="modal-overlay">
-            <div className="modal-content">
+        <div className="modal-overlay" onClick={onClose}>{/*closes background */}
+            <div className="modal-content" onClick={(e) => e.stopPropagation()}> {/*prevents everything else from being clicked out */}
                 <button className="close-button" onClick={onClose}>
-                    &times;
+                    x
                 </button>
                 <form className="form-card" onSubmit={handleSubmit}>
                     <input
