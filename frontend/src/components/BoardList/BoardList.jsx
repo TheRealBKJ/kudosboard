@@ -1,6 +1,7 @@
 import AddNewBoard from "./AddNewBoard/AddNewBoard.jsx";
 import BoardCard from "./BoardCard/BoardCard.jsx";
-import {useEffect,useState} from 'react';
+import { useEffect, useState } from 'react';
+import "./BoardList.css";
 export default function BoardList({ boards, addABoard, deleteBoard }) {
 
 
@@ -17,16 +18,25 @@ export default function BoardList({ boards, addABoard, deleteBoard }) {
     };
 
     return (
-        <div className ="board-list">
-            <AddNewBoard handleAddBoard ={addABoard}/>
-            {/*maps the boards out*/}
-            {boards.map((board) =>(
-                <BoardCard
-                    key = {board.id}
-                    data = {board}
-                    onDeleteBoard ={deleteBoard}
+        <div className="board-list">
+            <button className="add-new-trigger" onClick={openModal}>Add New Board</button>
+            {isModalOpen && (
+                <AddNewBoard
+                    addABoard={handleAddBoard}
+                    onClose={() => setIsModalOpen(false)}
                 />
-            ))}
+            )}
+
+            {/*maps the boards out*/}
+            <div className="board-box">
+                {boards.map((board) => (
+                    <BoardCard
+                        key={board.id}
+                        data={board}
+                        onDeleteBoard={deleteBoard}
+                    />
+                ))}
+            </div>
         </div>
     );
 }

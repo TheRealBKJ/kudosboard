@@ -7,7 +7,11 @@ export default function BoardCard({ data, onDeleteBoard }) {
 
     return (
         <div className="movie-card">
-            <img className="movie-card-img" src="https://picsum.photos/200/300?random=197" alt={data.title} />
+            <img
+                className="movie-card-img"
+                src={`https://picsum.photos/seed/${data.id}/300/200`}
+                alt={data.title}
+            />
 
             <div className="movie-card-contents">
                 <h2 className="movie-card-title">{data.title}</h2>

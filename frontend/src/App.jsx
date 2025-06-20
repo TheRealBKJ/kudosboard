@@ -48,6 +48,7 @@ export default function App() {
   // add a board
   const addABoard = async (data) => {
     try {
+      const{title, category, author} = data
       const res = await fetch(`${API_BASE}`, {
         method: 'POST',
         headers: {

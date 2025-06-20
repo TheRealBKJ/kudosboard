@@ -12,7 +12,7 @@ const boardRoutes = require('./routes/boards'); // board routing
 const cardRoutes = require('./routes/cards'); //imports cards routing
 
 app.use('/boards', boardRoutes);
-app.use( '/board', cardRoutes);
+app.use('/board', cardRoutes);
 
 
 app.use((err, req, res, next) => {
