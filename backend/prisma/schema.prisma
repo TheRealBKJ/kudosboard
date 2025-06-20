@@ -30,6 +30,18 @@ model card {
   gif      String
   upvotes  Int @default(0)
   owner    String?
+  pinnedAt   DateTime?
 
   board    board  @relation(fields: [board_id], references: [id])
+  comments  comment[]
+
+}
+
+model comment{
+  id        Int      @id @default(autoincrement())
+  message   String
+  author    String?      // Optional author name
+  createdAt DateTime @default(now())
+  cardId    Int
+  card      card     @relation(fields: [cardId], references: [id])
 }
