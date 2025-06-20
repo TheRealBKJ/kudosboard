@@ -1,6 +1,6 @@
 ## Unit Assignment: Kudos Board
 
-Submitted by: Braden
+Submitted by: Braden Jones
 
 Deployed Application https://kudosboard-271n.onrender.com/
 
